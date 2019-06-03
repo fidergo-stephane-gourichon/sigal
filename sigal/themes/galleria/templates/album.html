@@ -19,6 +19,8 @@
           <a class="gallery-map-toggle"><img src="{{ theme.url }}/img/map.png"
             title="Show/Hide map" alt="Show/Hide Map (m)" /></a>
           {% endif %}
+          <a style="font-size: 32px ; color : white ; text-decoration : none" id="play">&#x25b6;</a>
+          <a style="font-size: 32px ; color : white ; text-decoration : none" id="pause">&#x23F8;</a>
           <a id="fullscreen"><img src="{{ theme.url }}/img/fullscreen.png"
             title="Fullscreen" alt="Fullscreen (f)" /></a>
         </div>
@@ -221,6 +223,12 @@
         var gallery = this;
         $('#fullscreen').click(function() {
           gallery.toggleFullscreen();
+        });
+        $('#play').click(function() {
+          gallery.play();
+        });
+        $('#pause').click(function() {
+          gallery.pause();
         });
 
         $('.icons').appendTo(this.$('container'));
