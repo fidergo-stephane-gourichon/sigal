@@ -188,7 +188,7 @@ footer span:not(:last-child):after {
 
   header h1, #menu {
     display: inline-block;
-    width: 49.5%;
+    /* width: 49.5%; Don't limit title width to half of the picture. */
   }
   #menu {
     text-align: right;
