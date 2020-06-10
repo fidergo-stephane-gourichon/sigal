@@ -14,6 +14,7 @@
 {% endblock %}
 
 {% block content %}
+        <a style="font-size: 200% ; color : #ddd ; background-color : #444 ; text-decoration : none ; padding : 0.2em 1em" id="playbig">&#x25b6; Visualiser comme diaporama &#x25b6;</a>
         <div class="icons">
           {% if settings.show_map and album.show_map %}
           <a class="gallery-map-toggle"><img src="{{ theme.url }}/img/map.png"
@@ -224,8 +225,11 @@
         $('#fullscreen').click(function() {
           gallery.toggleFullscreen();
         });
-        $('#play').click(function() {
+        $('#playbig').click(function() {
           gallery.enterFullscreen();
+          gallery.play();
+        });
+        $('#play').click(function() {
           gallery.play();
         });
         $('#pause').click(function() {
