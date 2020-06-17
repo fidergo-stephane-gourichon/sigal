@@ -22,7 +22,7 @@
           <a title="Diaporama automatique" id="play">&#x25b6;</a>
           <a title="Rester sur cette image" id="pause">&#x23F8;</a>
           <a title="Plein écran ou revenir" id="fullscreen">&#x26F6;</a>
-          <a id="download">&#x26F6;</a>
+          <a title="Télécharger la photo" id="download">&#x1F4E5;</a>
         </div>
 
         {% if album.description %}
@@ -256,6 +256,14 @@
 
         window.gallery = this;
         var gallery = this;
+        $('#download').click(function() {
+            media = gallery.getData();
+
+            var anchor = document.createElement('a');
+            anchor.href = media.big;
+            anchor.target = '_blank';
+            anchor.click();
+        });
         $('#fullscreen').click(function() {
           gallery.toggleFullscreen();
         });
