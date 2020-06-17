@@ -241,10 +241,6 @@
 
       function playAndAdjustIcons() {
           gallery.play();
-          $('#play').hide();
-          $('#pause').show();
-          $('#download').hide();
-          $('#fullscreen').hide();
       }
 
     Galleria.ready(function() {
@@ -278,6 +274,20 @@
 
         $('#play').show();
         $('#pause').hide();
+
+      this.bind( Galleria.PAUSE, function() {
+          $('#play').show();
+          $('#pause').hide();
+          $('#download').show();
+          $('#fullscreen').show();
+      });
+
+      this.bind( Galleria.PLAY, function() {
+          $('#play').hide();
+          $('#pause').show();
+          $('#download').hide();
+          $('#fullscreen').hide();
+      });
 
         window.gallery = this;
         var gallery = this;
@@ -326,10 +336,6 @@
 
         $('#pause').click(function() {
           gallery.pause();
-            $('#play').show();
-            $('#pause').hide();
-            $('#download').show();
-            $('#fullscreen').show();
         });
 
         $('.icons').appendTo(this.$('stage'));
