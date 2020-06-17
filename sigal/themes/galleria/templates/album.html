@@ -289,15 +289,33 @@
         });
 
         $('#salient_play_button').click(function() {
-            gallery.enterFullscreen(playAndAdjustIcons);
+            if (gallery.isFullscreen())
+            {
+                playAndAdjustIcons()
+            } else
+            {
+                gallery.enterFullscreen(playAndAdjustIcons);
+            }
         });
 
         $('#salient_play_button2').click(function() {
-            gallery.enterFullscreen(playAndAdjustIcons);
+            if (gallery.isFullscreen())
+            {
+                playAndAdjustIcons()
+            } else
+            {
+                gallery.enterFullscreen(playAndAdjustIcons);
+            }
         });
 
         $('#play').click(function() {
-            gallery.enterFullscreen(playAndAdjustIcons);
+            if (gallery.isFullscreen())
+            {
+                playAndAdjustIcons()
+            } else
+            {
+                gallery.enterFullscreen(playAndAdjustIcons);
+            }
         });
 
         $('#pause').click(function() {
