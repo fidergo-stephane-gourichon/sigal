@@ -32,7 +32,7 @@
 
         <div class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
           <div style="display: inline-block ; margin : 16px 40px ; height:140px; color : #ddd ; background-color : #444 ;  ; vertical-align:text-bottom ">
-            <a style="font-size: 200% ; text-decoration : none ; margin : 0em 1em ; display: inline-block; line-height: 140px ; text-align: middle" id="playbig">&#x25b6; Visualiser comme diaporama &#x25b6;</a>
+            <a style="font-size: 200% ; text-decoration : none ; margin : 0em 1em ; display: inline-block; line-height: 140px ; text-align: middle" id="salient_play_button">&#x25b6; Visualiser comme diaporama &#x25b6;</a>
             </div>
           {% for media in album.medias %}
           {% if media.type == "image" %}
@@ -258,7 +258,7 @@
         $('#fullscreen').click(function() {
           gallery.toggleFullscreen();
         });
-        $('#playbig').click(function() {
+        $('#salient_play_button').click(function() {
           gallery.enterFullscreen();
           gallery.play();
             $('#play').hide();
