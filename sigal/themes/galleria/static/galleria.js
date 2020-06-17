@@ -1877,7 +1877,7 @@ Galleria = function() {
                 var n = self.getNext(index),
                     p = new Galleria.Picture(),
                     ndata = self.getData( n );
-                p.preload( self.isFullscreen() && ndata.big ? ndata.big : ndata.image );
+                p.preload( ndata.image );
             }
 
             // init the first rescale and attach callbacks
