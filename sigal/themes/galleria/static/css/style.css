@@ -115,7 +115,7 @@ header h1 a:hover, header h2 a:hover {
 
 /* galleria */
 #gallery {
-  line-height: 0;
+  /* line-height: 0; */
   width: 100%;
   height: 600px;
   clear: both;
@@ -146,7 +146,7 @@ header h1 a:hover, header h2 a:hover {
     height: 96px;
     cursor: pointer;
 }
-.icons img {
+.icons * {
   opacity: .7;
 }
 .icons img:hover {
