@@ -4967,7 +4967,7 @@ this.prependChild( 'info', 'myElement' );
             return;
         }
 
-        var src = this.isFullscreen() && data.big ? data.big : ( data.image || data.iframe ),
+        var src = ( data.image || data.iframe ),
             active = this._controls.getActive(),
             next = this._controls.getNext(),
             cached = next.isCached( src ),
