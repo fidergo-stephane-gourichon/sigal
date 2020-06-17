@@ -19,10 +19,16 @@
           <a class="gallery-map-toggle"><img src="{{ theme.url }}/img/map.png"
             title="Show/Hide map" alt="Show/Hide Map (m)" /></a>
           {% endif %}
-          <a title="Diaporama automatique" id="play">&#x25b6;</a>
-          <a title="Rester sur cette image" id="pause">&#x23F8;</a>
-          <a title="Plein écran ou revenir" id="fullscreen">&#x26F6;</a>
-          <a title="Télécharger la photo" id="download">&#x1F4E5;</a>
+          <a class="big-button-on-image-area" title="Diaporama automatique" id="play">&#x25b6;</a>
+          <a class="big-button-on-image-area" title="Rester sur cette image" id="pause">&#x23F8;</a>
+        </div>
+
+        <div class="icons-bottom-left">
+          <a class="big-button-on-image-area" title="Télécharger la photo" id="download">&#x1F4E5;</a>
+        </div>
+
+        <div class="icons-bottom-right">
+          <a class="big-button-on-image-area" title="Plein écran ou revenir" id="fullscreen">&#x26F6;</a>
         </div>
 
         {% if album.description %}
@@ -256,6 +262,9 @@
             {% endif %}
         });
 
+        $('#play').show();
+        $('#pause').hide();
+
         window.gallery = this;
         var gallery = this;
         $('#download').click(function() {
@@ -274,19 +283,36 @@
           gallery.play();
             $('#play').hide();
             $('#pause').show();
+            $('#download').hide();
+            $('#fullscreen').hide();
+        });
+        $('#salient_play_button2').click(function() {
+          gallery.enterFullscreen();
+          gallery.play();
+            $('#play').hide();
+            $('#pause').show();
+            $('#download').hide();
+            $('#fullscreen').hide();
         });
         $('#play').click(function() {
+          gallery.enterFullscreen();
             gallery.play();
             $('#play').hide();
             $('#pause').show();
+            $('#download').hide();
+            $('#fullscreen').hide();
         });
         $('#pause').click(function() {
           gallery.pause();
             $('#play').show();
             $('#pause').hide();
+            $('#download').show();
+            $('#fullscreen').show();
         });
 
-        $('.icons').appendTo(this.$('container'));
+        $('.icons').appendTo(this.$('stage'));
+        $('.icons-bottom-left').appendTo(this.$('stage'));
+        $('.icons-bottom-right').appendTo(this.$('stage'));
 
         {% if settings.show_map and album.show_map %}
         $(".gallery-map-toggle").click(galleryMapToggle);
