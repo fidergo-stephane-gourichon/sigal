@@ -3061,7 +3061,7 @@ Galleria.prototype = {
                 $.each(filtered, function(i, loadme) {
                     var d = self.getData(loadme),
                         img = self._controls.slides[loadme],
-                        src = self.isFullscreen() && d.big ? d.big : ( d.image || d.iframe );
+                        src = ( d.image || d.iframe );
 
                     if ( d.iframe && !d.image ) {
                         img.isIframe = true;
