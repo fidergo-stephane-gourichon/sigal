@@ -1836,7 +1836,8 @@ Galleria = function() {
             }
 
             // swap to big image if it's different from the display image
-            if ( data && data.big && data.image !== data.big ) {
+            // Just break the logic for now.  Should switch to high resolution on zooming.
+            if ( 0 && data && data.big && data.image !== data.big ) {
                 var big    = new Galleria.Picture(),
                     cached = big.isCached( data.big ),
                     index  = self.getIndex(),
