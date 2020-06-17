@@ -139,7 +139,12 @@ header h1 a:hover, header h2 a:hover {
   text-align: right;
 }
 .icons a {
-  cursor: pointer;
+    font-size: 96px;
+    display: inline-block;
+    color : white ;
+    text-decoration : none;
+    height: 96px;
+    cursor: pointer;
 }
 .icons img {
   opacity: .7;
@@ -195,6 +200,15 @@ footer span:not(:last-child):after {
   }
 }
 
-figure { display: inline-block; }
+figure {
+    display: inline-block;
+    box-shadow: 12px 12px 6px rgba(0, 0, 0, .2);
+}
+
+figure *, figure * * {
+    margin:0px;
+    padding:0px;
+    display:block;
+}
 
 figcaption { display: none; }
