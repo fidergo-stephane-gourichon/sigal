@@ -178,7 +178,7 @@ footer span:not(:last-child):after {
 
 @media only screen and (min-width: 980px) {
   .container {
-    width: 960px;
+      /* width: 960px; Don't limit width of container */
   }
 
   #gallery {
@@ -194,3 +194,7 @@ footer span:not(:last-child):after {
     text-align: right;
   }
 }
+
+figure { display: inline-block; }
+
+figcaption { display: none; }
