@@ -239,6 +239,14 @@
     }
     {% endif %}
 
+      function playAndAdjustIcons() {
+          gallery.play();
+          $('#play').hide();
+          $('#pause').show();
+          $('#download').hide();
+          $('#fullscreen').hide();
+      }
+
     Galleria.ready(function() {
         /*
         load thumbnails after gallery setup, and download has started
@@ -281,33 +289,15 @@
         });
 
         $('#salient_play_button').click(function() {
-            gallery.enterFullscreen(function() {
-                gallery.play();
-                $('#play').hide();
-                $('#pause').show();
-                $('#download').hide();
-                $('#fullscreen').hide();
-            });
+            gallery.enterFullscreen(playAndAdjustIcons);
         });
 
         $('#salient_play_button2').click(function() {
-            gallery.enterFullscreen(function() {
-                gallery.play();
-                $('#play').hide();
-                $('#pause').show();
-                $('#download').hide();
-                $('#fullscreen').hide();
-            });
+            gallery.enterFullscreen(playAndAdjustIcons);
         });
 
         $('#play').click(function() {
-            gallery.enterFullscreen(function() {
-                gallery.play();
-                $('#play').hide();
-                $('#pause').show();
-                $('#download').hide();
-                $('#fullscreen').hide();
-            });
+            gallery.enterFullscreen(playAndAdjustIcons);
         });
 
         $('#pause').click(function() {
