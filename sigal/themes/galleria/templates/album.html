@@ -45,7 +45,7 @@
           {% if media.type == "image" %}
           <figure class="gallery__img--{{ "main" if loop.first else "secondary" }} thumbnail"
                   itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="#{{ media.url }}" itemprop="contentUrl" data-size="{{media.size.width}}x{{media.size.height}}" onclick="gallery.enterFullscreen(); gallery.show({{loop.index}}); return false;">
+            <a href="#{{ media.url }}" itemprop="contentUrl" data-size="{{media.size.width}}x{{media.size.height}}" onclick="gallery.enterFullscreen(function() {gallery.show({{loop.index-1}})}); return false;">
               <img src="{{ media.thumbnail }}"
                    data-echo="{{ media.url if loop.first else media.thumbnail }}"
                    alt="{{ media.url }}" itemprop="thumbnail" title="{{ media.exif.datetime }}" />
@@ -275,33 +275,41 @@
             anchor.target = '_blank';
             anchor.click();
         });
+
         $('#fullscreen').click(function() {
           gallery.toggleFullscreen();
         });
+
         $('#salient_play_button').click(function() {
-          gallery.enterFullscreen();
-          gallery.play();
-            $('#play').hide();
-            $('#pause').show();
-            $('#download').hide();
-            $('#fullscreen').hide();
+            gallery.enterFullscreen(function() {
+                gallery.play();
+                $('#play').hide();
+                $('#pause').show();
+                $('#download').hide();
+                $('#fullscreen').hide();
+            });
         });
+
         $('#salient_play_button2').click(function() {
-          gallery.enterFullscreen();
-          gallery.play();
-            $('#play').hide();
-            $('#pause').show();
-            $('#download').hide();
-            $('#fullscreen').hide();
+            gallery.enterFullscreen(function() {
+                gallery.play();
+                $('#play').hide();
+                $('#pause').show();
+                $('#download').hide();
+                $('#fullscreen').hide();
+            });
         });
+
         $('#play').click(function() {
-          gallery.enterFullscreen();
-            gallery.play();
-            $('#play').hide();
-            $('#pause').show();
-            $('#download').hide();
-            $('#fullscreen').hide();
+            gallery.enterFullscreen(function() {
+                gallery.play();
+                $('#play').hide();
+                $('#pause').show();
+                $('#download').hide();
+                $('#fullscreen').hide();
+            });
         });
+
         $('#pause').click(function() {
           gallery.pause();
             $('#play').show();
