@@ -261,12 +261,18 @@
         $('#playbig').click(function() {
           gallery.enterFullscreen();
           gallery.play();
+            $('#play').hide();
+            $('#pause').show();
         });
         $('#play').click(function() {
-          gallery.play();
+            gallery.play();
+            $('#play').hide();
+            $('#pause').show();
         });
         $('#pause').click(function() {
           gallery.pause();
+            $('#play').show();
+            $('#pause').hide();
         });
 
         $('.icons').appendTo(this.$('container'));
