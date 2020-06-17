@@ -4835,7 +4835,7 @@ this.prependChild( 'info', 'myElement' );
                 for ( i = this._options.preload; i > 0; i-- ) {
                     p = new Galleria.Picture();
                     ndata = this.getData( n );
-                    p.preload( this.isFullscreen() && ndata.big ? ndata.big : ndata.image );
+                    p.preload( ndata.image );
                     n = this.getNext( n );
                 }
             } catch(e) {}
